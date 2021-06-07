@@ -627,6 +627,68 @@ textarea {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+.site {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	flex-wrap: wrap;
+}
+
+.site-header {
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	background-color: #f7f7f6;
+	border: 6px solid #9e0000;
+	border-radius: 15px;
+	border-width: 6px 6px 3px;
+	grid-column: 1/-1;
+	height: max-content;
+}
+
+.site-title {
+	margin: 10px 10px;
+}
+
+.site-title a {
+	display: block;
+	background-image: url("./kitchen6-logo.svg");
+	background-repeat: no-repeat;
+	font-size: 0;
+	width: 240px;
+	height: 23px;
+}
+
+.site-main {
+	background-color: #d7d7d2;
+	border: 6px solid #9e0000;
+	border-radius: 15px;
+	border-width: 3px 6px 6px;
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+	height: calc(100vh - 85px);
+	overflow: hidden;
+	/* Resolves issue with <pre> elements forcing full width. */
+}
+
+.widget-area {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	background-color: #e7e7e4;
+	border: 6px solid #9e0000;
+	border-radius: 15px;
+	border-width: 3px 6px 6px 3px;
+}
+
+.site-footer {
+	display: none;
+}
+
+.no-sidebar .site {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-areas: "header" "main" "footer";
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -855,6 +917,19 @@ textarea {
 	display: block;
 }
 
+/* Search
+--------------------------------------------- */
+.search {
+	position: absolute;
+	right: 0.7rem;
+	height: 1.2rem;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	z-index: 1;
+	top: 1rem;
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/
@@ -939,56 +1014,6 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 1.5em;
-}
-
-.site-header {
-	display: flex;
-	align-items: center;
-	width: 100vw;
-	background-color: #f7f7f6;
-	border: 6px solid #9e0000;
-	border-radius: 15px;
-	border-width: 6px 6px 3px;
-	grid-column: 1/-1;
-	height: max-content;
-}
-
-.site-title {
-	margin: 10px 10px;
-}
-
-.site-title a {
-	display: block;
-	background-image: url("./kitchen6-logo.svg");
-	background-repeat: no-repeat;
-	font-size: 0;
-	width: 240px;
-	height: 23px;
-}
-
-.site-main {
-	background-color: #d7d7d2;
-	border: 6px solid #9e0000;
-	border-radius: 15px;
-	border-width: 3px 6px 6px;
-	grid-column: 1 / 2;
-	grid-row: 2 / 3;
-	height: calc(100vh - 85px);
-}
-
-.site {
-	display: grid;
-	grid-template-columns: 3fr 1fr;
-	flex-wrap: wrap;
-}
-
-.widget-area {
-	grid-column: 2 / 3;
-	grid-row: 2 / 3;
-	background-color: #e7e7e4;
-	border: 6px solid #9e0000;
-	border-radius: 15px;
-	border-width: 3px 6px 6px 3px;
 }
 
 /*# sourceMappingURL=style.css.map */

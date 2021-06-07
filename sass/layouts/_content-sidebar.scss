@@ -1,27 +1,64 @@
 .site {
-	display: grid;
-	grid-template-columns: auto ($size__site-sidebar);
-	grid-template-areas:
-		"header header"
-		"main sidebar"
-		"footer footer";
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  flex-wrap: wrap;
 }
 
 .site-header {
-	grid-area: header;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  background-color: #f7f7f6;
+  border: 6px solid $color__background-body;
+  border: {
+    radius: 15px;
+    width: 6px 6px 3px;
+  }
+  grid-column: 1/-1;
+  height: max-content;
+}
+
+.site-title {
+  margin: 10px 10px;
+
+  a {
+    display: block;
+    background: {
+      image: url("./kitchen6-logo.svg");
+      repeat: no-repeat;
+    }
+    font-size: 0;
+    width: 240px;
+    height: 23px;
+  }
 }
 
 .site-main {
-	grid-area: main;
-	overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
+  background-color: #d7d7d2;
+  border: 6px solid $color__background-body;
+  border: {
+    radius: 15px;
+    width: 3px 6px 6px;
+  }
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  height: calc(100vh - 85px);
+  overflow: hidden; /* Resolves issue with <pre> elements forcing full width. */
 }
 
 .widget-area {
-	grid-area: sidebar;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: #e7e7e4;
+  border: 6px solid $color__background-body;
+  border: {
+    radius: 15px;
+    width: 3px 6px 6px 3px;
+  }
 }
 
 .site-footer {
-	grid-area: footer;
+  display: none;
 }
 
 @import "no-sidebar";

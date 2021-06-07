@@ -50,4 +50,18 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
+
+
+    <div class="search-input">
+  <input type="text" class="search-field" id="search-field" placeholder="Search Recipes and Tags" autocomplete="off" />
+</div>
+<div class="search js-search-trigger">
+  <div class="search-text">
+    <span>Search</span>
+    <span>Recipes</span>
+  </div>
+  <div class="dashicons dashicons-search search-icon"></div>
+</div>
+
+
 	</header><!-- #masthead -->
